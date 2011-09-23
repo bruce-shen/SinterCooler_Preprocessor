@@ -2,7 +2,7 @@
 
     Private sinterCoolerGeometry As New SinterCoolerGeometry()
 
-
+    'This is the new Line
     Public Sub New()
 
         ' This call is required by the Windows Form Designer.
