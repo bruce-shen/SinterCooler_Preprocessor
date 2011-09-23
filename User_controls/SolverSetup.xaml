@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="SolverSetup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="900" Height="576">
+    <Grid>
+        <Grid Name="probePointGrid" Margin="200,89,240,173">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            
+            <!--Column 1-->
+            <Label Grid.Column="0" Grid.Row="0" Content="Time" />
+            <Label Grid.Column="0" Grid.Row="1" Content="Total Simulation Time" />
+            <Label Grid.Column="0" Grid.Row="2" Content="Time step" />
+            <Label Grid.Column="0" Grid.Row="3" Content="" />
+            <Label Grid.Column="0" Grid.Row="4" Content="Residuals" />
+            <Label Grid.Column="0" Grid.Row="5" Content="Res. X Velocity" />
+            <Label Grid.Column="0" Grid.Row="6" Content="Res. Y Velocity" />
+            <Label Grid.Column="0" Grid.Row="7" Content="Res. Pressure" />
+            <Label Grid.Column="0" Grid.Row="8" Content="Res. Energy" />
+            
+            <!--Column 2-->
+            <TextBox Grid.Column="1" Grid.Row="0" />
+            <TextBox Grid.Column="1" Grid.Row="1" />
+            <TextBox Grid.Column="1" Grid.Row="2" />
+            <TextBox Grid.Column="1" Grid.Row="4" />
+            <TextBox Grid.Column="1" Grid.Row="5" />
+            <TextBox Grid.Column="1" Grid.Row="6" />
+            <TextBox Grid.Column="1" Grid.Row="7" />
+            <TextBox Grid.Column="1" Grid.Row="8" />
+        </Grid>
+        <Button Height="32" HorizontalAlignment="Left" Margin="200,0,0,107" Name="Button1" VerticalAlignment="Bottom" Width="91">Default</Button>
+        <Button Height="32" HorizontalAlignment="Left" Margin="326,0,0,107" Name="Button2" VerticalAlignment="Bottom" Width="91">Proceed</Button>
+    </Grid>
+</UserControl>

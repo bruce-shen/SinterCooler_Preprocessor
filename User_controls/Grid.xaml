@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="Grid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="900" Height="576">
+    <Grid>
+        <Canvas Margin="51,58,431,78" Name="geometryCanvas" Background="LightCyan" />
+        <Grid HorizontalAlignment="Right" Name="Grid1" Width="300" Height="175" VerticalAlignment="Top" Margin="0,58,35,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1,1,1,1" >
+                <Label Grid.Row="0" Grid.Column="0" Content="Vertical" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1" >
+                <Label Grid.Row="1" Grid.Column="0" Content="V1" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1" >
+                <Label Grid.Row="2" Grid.Column="0" Content="V2" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1" >
+                <Label Grid.Row="3" Grid.Column="0" Content="V3" />
+            </Border>
+            <Border Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1" >
+                <Label Grid.Row="4" Grid.Column="0" Content="V4" />
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0,1,1,1" />
+            <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="1" Grid.Row="1" Name="T_V1_Height" TextChanged="TextBox_Value_TextChanged" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="1" Grid.Row="2" Name="T_V2_Height" TextChanged="TextBox_Value_TextChanged" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="1" Grid.Row="3" Name="T_V3_Height" TextChanged="TextBox_Value_TextChanged" />
+            </Border>
+            <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="1" Grid.Row="4" Name="T_V4_Height" TextChanged="TextBox_Value_TextChanged" />
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0,1,1,1" >
+                <Label Grid.Row="0" Grid.Column="2" Content="Unit" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <Label Grid.Row="1" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <Label Grid.Row="2" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <Label Grid.Row="3" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="4" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <Label Grid.Row="4" Grid.Column="2" Content="m" />
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="0,1,1,1" >
+                <Label Grid.Row="0" Grid.Column="3" Content="Grid Number" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="3" Grid.Row="1" Margin="3" Name="T_V1_Grid" TextChanged="TextBox_Grid_TextChanged" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="3" Grid.Row="2" Margin="3" Name="T_V2_Grid" TextChanged="TextBox_Grid_TextChanged" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="3" Grid.Row="3" Margin="3" Name="T_V3_Grid" TextChanged="TextBox_Grid_TextChanged" />
+            </Border>
+            <Border Grid.Row="4" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="3" Grid.Row="4" Margin="3" Name="T_V4_Grid" TextChanged="TextBox_Grid_TextChanged" />
+            </Border>
+        </Grid>
+
+        <Grid HorizontalAlignment="Right" Name="Grid2" Width="300" Margin="0,0,32,133" Height="140" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1,1,1,1" >
+                <Label Grid.Row="0" Grid.Column="0" Content="Horizontal" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1" >
+                <Label Grid.Row="1" Grid.Column="0" Content="H1" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1" >
+                <Label Grid.Row="2" Grid.Column="0" Content="H2" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1" >
+                <Label Grid.Row="3" Grid.Column="0" Content="H3" />
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0,1,1,1" />
+            <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Name="T_H1_Width" TextChanged="TextBox_Value_TextChanged" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Name="T_H2_Width" TextChanged="TextBox_Value_TextChanged" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Name="T_H3_Width" TextChanged="TextBox_Value_TextChanged" />
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0,1,1,1" >
+                <Label Grid.Row="0" Grid.Column="2" Content="Unit" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="0,1,1,1" >
+                <Label Grid.Row="1" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="0,1,1,1" >
+                <Label Grid.Row="1" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="0,1,1,1" >
+                <Label Grid.Row="1" Grid.Column="2" Content="m" />
+            </Border>
+            
+            
+            
+            <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="0,1,1,1" >
+                <Label Grid.Row="0" Grid.Column="3" Content="Grid Number" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="3" Grid.Row="1" Margin="3" Name="T_H1_Grid" TextChanged="TextBox_Grid_TextChanged" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="3" Grid.Row="2" Margin="3" Name="T_H2_Grid" TextChanged="TextBox_Grid_TextChanged" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="3" BorderBrush="Black" BorderThickness="0,0,1,1" >
+                <TextBox Grid.Column="3" Grid.Row="3" Margin="3" Name="T_H3_Grid" TextChanged="TextBox_Grid_TextChanged" />
+            </Border>
+        </Grid>
+        <Button Height="27" HorizontalAlignment="Right" Margin="0,0,193,78" Name="defaultButton" VerticalAlignment="Bottom" Width="86">Default</Button>
+        <Button Height="27" HorizontalAlignment="Right" Margin="0,0,82,78" Name="proceedButton" VerticalAlignment="Bottom" Width="86">Proceed</Button>
+    </Grid>
+</UserControl>

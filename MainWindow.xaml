@@ -1,0 +1,47 @@
+﻿<Window x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Icon="pack://application:,,,/Resources/imgs/logo_ArcelorMittal.ico"
+    Title="Sinter Cooler Simulation Pre-processor" Height="600" Width="900" MinHeight="600" MinWidth="900" MaxHeight="600" MaxWidth="900" xmlns:my="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
+    <Grid>
+        <Menu IsMainMenu="True" Name="menu" Height="22" VerticalAlignment="Top" MenuItem.Click="Menu_Click">
+            <MenuItem  Header="_File" Name="MenuItem1">
+                <MenuItem Header="_New..."  Name="newFile"/>
+                <MenuItem Header="_Open..." Name="openFile"/>
+                <MenuItem Header="_Save" Name="saveFile"/>
+                <MenuItem Header="_Save As..." Name="saveAs"/>
+                <MenuItem Header="_Exit" Name="exit"/>
+            </MenuItem>
+            <MenuItem Header="Sinter Cooler" Name="sinterCooler">
+                <MenuItem Header="Geometry" Name="geometry"/>
+                <MenuItem Header="Grids" Name="grid"/>
+            </MenuItem>
+            <MenuItem Header="Sinter" Name="sinter">
+                <MenuItem Header="Sinter properties" Name="sinterProperties"/>
+                <MenuItem Header="Sinter particle size distribution across the section" Name="sinterParticle"/>
+                <MenuItem Header="Sinter temperature and distribution" Name="sinterTemperature"/>
+            </MenuItem>
+            <MenuItem Header="Cooling Air and Blower" Name="coolingAirBlower">
+            </MenuItem>
+            
+            <MenuItem Header="Format Result" Name="formatResult">
+                <MenuItem Header="Probe location" Name="probeLocation"/>
+                <MenuItem Header="Output items for probes" Name="outForProbes"/>
+                <MenuItem Header="Output items for contours" Name="outForContours"/>
+            </MenuItem>
+            
+            <MenuItem Header="Computation" Name="computation">
+                <MenuItem Header="Solver Setup" Name="solverSetup"/>
+                <MenuItem Header="Run" Name="run"/>
+                <MenuItem Header="Results" Name="results"/>
+            </MenuItem>
+
+            <MenuItem Header="Help/About" Name="about">
+            </MenuItem>
+
+        </Menu>
+        <ContentControl Margin="0,24,0,0" Name="contentController">
+            <Image Margin="0,24,0,0" Name="bkImage" Stretch="Fill" />
+        </ContentControl>
+    </Grid>
+</Window>

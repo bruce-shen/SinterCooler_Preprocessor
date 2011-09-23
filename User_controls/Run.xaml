@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="Run"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="900" Height="576">
+    <Grid>
+        <ProgressBar Height="30" Margin="158,184,168,0" Name="ProgressBar1" VerticalAlignment="Top" />
+        <Label Height="28" HorizontalAlignment="Left" Margin="158,153,0,0" Name="Label1" VerticalAlignment="Top" Width="120">Case Runing Status:</Label>
+        <Button Height="32" HorizontalAlignment="Left" Margin="158,0,0,252" Name="Button1" VerticalAlignment="Bottom" Width="91">Stop</Button>
+        <Button Height="32" HorizontalAlignment="Left" Margin="284,0,0,252" Name="Button2" VerticalAlignment="Bottom" Width="91">Plot results</Button>
+    </Grid>
+</UserControl>

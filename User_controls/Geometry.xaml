@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="Geometry"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="900" Height="576">
+    <Grid>
+
+        <Grid Name="Grid1" Width=" 300" HorizontalAlignment="Right" Margin="0,48,34,143">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1,1,1,1">
+                <Label Grid.Row="0" Grid.Column="0" Content="W1L" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="1" Grid.Column="0" Content="W1R" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="2" Grid.Column="0" Content="W2L" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="3" Grid.Column="0" Content="W2R" />
+            </Border>
+            <Border Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="4" Grid.Column="0" Content="W3L" />
+            </Border>
+            <Border Grid.Row="5" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="5" Grid.Column="0" Content="W3R" />
+            </Border>
+            <Border Grid.Row="6" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="6" Grid.Column="0" Content="W4L" />
+            </Border>
+            <Border Grid.Row="7" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="7" Grid.Column="0" Content="W4R" />
+            </Border>
+            <Border Grid.Row="8" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="8" Grid.Column="0" Content="H1" />
+            </Border>
+            <Border Grid.Row="9" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="9" Grid.Column="0" Content="H2" />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,1">
+                <Label Grid.Row="10" Grid.Column="0" Content="H3" />
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0,1,1,1">
+                <TextBox Name="T_W1L" Grid.Column="1" Grid.Row="0" Margin="3"  KeyDown="TextBox_KeyDown" >100</TextBox>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_W1R" Grid.Column="1" Grid.Row="1" Margin="3"  KeyDown="TextBox_KeyDown" >100</TextBox>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_W2L" Grid.Column="1" Grid.Row="2" Margin="3"  KeyDown="TextBox_KeyDown" >85</TextBox>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_W2R" Grid.Column="1" Grid.Row="3" Margin="3"  KeyDown="TextBox_KeyDown" >85</TextBox>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_W3L" Grid.Column="1" Grid.Row="4" Margin="3"  KeyDown="TextBox_KeyDown" >50</TextBox>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_W3R" Grid.Column="1" Grid.Row="5" Margin="3"  KeyDown="TextBox_KeyDown" >50</TextBox>
+            </Border>
+            <Border Grid.Row="6" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_W4L" Grid.Column="1" Grid.Row="6" Margin="3"  KeyDown="TextBox_KeyDown" >30</TextBox>
+            </Border>
+            <Border Grid.Row="7" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_W4R" Grid.Column="1" Grid.Row="7" Margin="3"  KeyDown="TextBox_KeyDown" >30</TextBox>
+            </Border>
+            <Border Grid.Row="8" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_H1" Grid.Column="1" Grid.Row="8" Margin="3"  KeyDown="TextBox_KeyDown" >100</TextBox>
+            </Border>
+            <Border Grid.Row="9" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_H2" Grid.Column="1" Grid.Row="9" Margin="3"  KeyDown="TextBox_KeyDown" >30</TextBox>
+            </Border>
+            <Border Grid.Row="10" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <TextBox Name="T_H3" Grid.Column="1" Grid.Row="10" Margin="3" KeyDown="TextBox_KeyDown" >30</TextBox>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0,1,1,1">
+                <Label Grid.Row="0" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="1" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="2" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="3" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="4" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="4" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="5" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="5" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="6" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="6" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="7" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="7" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="8" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="8" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="9" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="9" Grid.Column="2" Content="m" />
+            </Border>
+            <Border Grid.Row="10" Grid.Column="2" BorderBrush="Black" BorderThickness="0,0,1,1">
+                <Label Grid.Row="10" Grid.Column="2" Content="m" />
+            </Border>
+        </Grid>
+
+        <Canvas Name="geometryCanvas" Background="LightCyan" Width="400" Height="400" Margin="71,48,429,128" />
+        <Button Height="27" Name="defaultButton" HorizontalAlignment="Right" Margin="0,0,198,98.294" VerticalAlignment="Bottom" Width="86">Default</Button>
+        <Button Height="27" Name="proceedButton" Margin="0,0,84,98.294" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86">Proceed</Button>
+    </Grid>
+</UserControl>
