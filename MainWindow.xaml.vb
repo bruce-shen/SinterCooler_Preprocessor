@@ -1,5 +1,5 @@
 ﻿Class MainWindow
-
+    'Menu page windows
     Dim geometryWindow As Geometry
     Dim gridWindow As Grid
     Dim sinterPropertiesWindow As SinterProperties
@@ -12,12 +12,13 @@
     Dim solverSetupWindow As SolverSetup
     Dim runWindow As Run
     Dim resultsWindow As Results
+    Dim sinterCoolerGeometry As New SinterCoolerGeometry()
 
 
     Sub New()
         InitializeComponent()
-        InitializeUserControls()
-        InitializeBackground()
+        InitializeUserControls()    'init all page windows
+        InitializeBackground()      'init arcelormittal background
     End Sub
 
     Private Sub InitializeUserControls()
@@ -40,6 +41,14 @@
         Me.bkImage.Source = BitmapFrame.Create(Application.GetResourceStream(New Uri("/Resources/imgs/arcelormittal.jpg", UriKind.Relative)).Stream)
     End Sub
 
+    'Clear all page winodws' canvas
+    Private Sub ClearCanvas()
+        Me.geometryWindow.geometryCanvas.Children.Clear()
+        Me.gridWindow.geometryCanvas.Children.Clear()
+        Me.sinterParticleWindow.geometryCanvas.Children.Clear()
+        Me.probeLocationWindow.geometryCanvas.Children.Clear()
+    End Sub
+
     Private Sub Menu_Click(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs)
         Dim mnu As MenuItem = DirectCast(e.OriginalSource, MenuItem)
         Select Case mnu.Name
@@ -49,16 +58,20 @@
             Case "exit"
                 Dim Response As Integer
                 Response = MsgBox(Prompt:="Are you sure to exit without saving?", Buttons:=vbYesNo)
-
                 If Response = vbYes Then
                     Application.Current.Shutdown()
                 End If
 
                 Exit Select
             Case "geometry"
+                ClearCanvas()
+                Me.geometryWindow.drawGeometry()
                 contentController.Content = geometryWindow
                 Exit Select
             Case "grid"
+                Me.gridWindow.sinterCoolerGemometry = Me.geometryWindow.sinterCoolerGemometry
+                ClearCanvas()
+                Me.gridWindow.DrawGeometry()
                 contentController.Content = Me.gridWindow
                 Exit Select
             Case "sinterProperties"
