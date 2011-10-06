@@ -13,6 +13,16 @@
 
     End Sub
 
+
+    Public Property sinterCoolerGemometry() As SinterCoolerGeometry
+        Get
+            Return sinterCoolerGeometry
+        End Get
+        Set(ByVal value As SinterCoolerGeometry)
+            sinterCoolerGeometry = value
+        End Set
+    End Property
+
     ' Default Geometry
     Private Sub InitDefaultGeometry()
 
@@ -86,8 +96,8 @@
     End Sub
 
     'draw geometry
-    Private Sub drawGeometry()
-
+    Public Sub drawGeometry()
+        'Init 8 corner point of sinter cooler geometry
         Dim points(0 To 7) As Point
         Dim xLengthRatio As Double = Me.geometryCanvas.Width / (Me.sinterCoolerGeometry.W1L + Me.sinterCoolerGeometry.W1R)
         Dim yLengthRatio As Double = Me.geometryCanvas.Height / (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2 + Me.sinterCoolerGeometry.H3)
@@ -101,7 +111,7 @@
         points(7) = New Point(Me.geometryCanvas.Width, 0)
 
         'draw outline
-        Me.sinterCoolerGeometry.Stroke = Brushes.Black
+        Me.sinterCoolerGeometry.Stroke = Brushes.Blue
         Me.sinterCoolerGeometry.StrokeThickness = 1
         Me.geometryCanvas.Children.Add(sinterCoolerGeometry)
 
@@ -111,6 +121,7 @@
         'draw arrow liens
         drawArrowLines(xLengthRatio, yLengthRatio)
 
+        'draw strings
         drawPropertyMarkers(xLengthRatio, yLengthRatio)
     End Sub
 
@@ -147,20 +158,20 @@
     End Sub
 
     Private Sub drawArrowLines(ByVal xRatio As Double, ByVal yRatio As Double)
-        drawArrow(New Point(-20, 0), New Point(-20, Me.sinterCoolerGeometry.H1 * yRatio))    'H1 arrow
-        drawArrow(New Point(-20, Me.sinterCoolerGeometry.H1 * yRatio), New Point(-20, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio)) 'H2 arrow
-        drawArrow(New Point(-20, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio), New Point(-20, Me.geometryCanvas.Height))   'H3 arrow
-        drawArrow(New Point(0, -15), New Point(Me.sinterCoolerGeometry.W1L * xRatio, -15))  'W1L arrow
-        drawArrow(New Point(Me.sinterCoolerGeometry.W1L * xRatio, -15), New Point(Me.geometryCanvas.Width, -15)) 'W1R arrow
-        drawArrow(New Point((Me.sinterCoolerGeometry.W1L - Me.sinterCoolerGeometry.W2L) * xRatio, Me.sinterCoolerGeometry.H1 * yRatio - 20), New Point(Me.sinterCoolerGeometry.W1L * xRatio, Me.sinterCoolerGeometry.H1 * yRatio - 20)) 'W2L arrow
-        drawArrow(New Point(Me.sinterCoolerGeometry.W1L * xRatio, Me.sinterCoolerGeometry.H1 * yRatio - 20), New Point((Me.sinterCoolerGeometry.W1L + Me.sinterCoolerGeometry.W2R) * xRatio, Me.sinterCoolerGeometry.H1 * yRatio - 20)) 'W2R arrow
-        drawArrow(New Point((Me.sinterCoolerGeometry.W1L - Me.sinterCoolerGeometry.W3L) * xRatio, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio - 20), New Point(Me.sinterCoolerGeometry.W1L * xRatio, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio - 20))    'draw W3L arrow
-        drawArrow(New Point(Me.sinterCoolerGeometry.W1L * xRatio, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio - 20), New Point((Me.sinterCoolerGeometry.W1L + Me.sinterCoolerGeometry.W3R) * xRatio, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio - 20))   'draw W3R arrow
-        drawArrow(New Point((Me.sinterCoolerGeometry.W1L - Me.sinterCoolerGeometry.W4L) * xRatio, Me.geometryCanvas.Height + 15), New Point(Me.sinterCoolerGeometry.W1L * xRatio, Me.geometryCanvas.Height + 15))    'W4L arrow
-        drawArrow(New Point(Me.sinterCoolerGeometry.W1L * xRatio, Me.geometryCanvas.Height + 15), New Point((Me.sinterCoolerGeometry.W1L + Me.sinterCoolerGeometry.W4R) * xRatio, Me.geometryCanvas.Height + 15))    'W4R arrow
+        drawDoubleArrow(New Point(-20, 0), New Point(-20, Me.sinterCoolerGeometry.H1 * yRatio), Brushes.Black)    'H1 arrow
+        drawDoubleArrow(New Point(-20, Me.sinterCoolerGeometry.H1 * yRatio), New Point(-20, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio), Brushes.Black) 'H2 arrow
+        drawDoubleArrow(New Point(-20, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio), New Point(-20, Me.geometryCanvas.Height), Brushes.Black)   'H3 arrow
+        drawDoubleArrow(New Point(0, -15), New Point(Me.sinterCoolerGeometry.W1L * xRatio, -15), Brushes.Black)  'W1L arrow
+        drawDoubleArrow(New Point(Me.sinterCoolerGeometry.W1L * xRatio, -15), New Point(Me.geometryCanvas.Width, -15), Brushes.Black) 'W1R arrow
+        drawDoubleArrow(New Point((Me.sinterCoolerGeometry.W1L - Me.sinterCoolerGeometry.W2L) * xRatio, Me.sinterCoolerGeometry.H1 * yRatio - 20), New Point(Me.sinterCoolerGeometry.W1L * xRatio, Me.sinterCoolerGeometry.H1 * yRatio - 20), Brushes.Black) 'W2L arrow
+        drawDoubleArrow(New Point(Me.sinterCoolerGeometry.W1L * xRatio, Me.sinterCoolerGeometry.H1 * yRatio - 20), New Point((Me.sinterCoolerGeometry.W1L + Me.sinterCoolerGeometry.W2R) * xRatio, Me.sinterCoolerGeometry.H1 * yRatio - 20), Brushes.Black) 'W2R arrow
+        drawDoubleArrow(New Point((Me.sinterCoolerGeometry.W1L - Me.sinterCoolerGeometry.W3L) * xRatio, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio - 20), New Point(Me.sinterCoolerGeometry.W1L * xRatio, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio - 20), Brushes.Black)    'draw W3L arrow
+        drawDoubleArrow(New Point(Me.sinterCoolerGeometry.W1L * xRatio, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio - 20), New Point((Me.sinterCoolerGeometry.W1L + Me.sinterCoolerGeometry.W3R) * xRatio, (Me.sinterCoolerGeometry.H1 + Me.sinterCoolerGeometry.H2) * yRatio - 20), Brushes.Black)   'draw W3R arrow
+        drawDoubleArrow(New Point((Me.sinterCoolerGeometry.W1L - Me.sinterCoolerGeometry.W4L) * xRatio, Me.geometryCanvas.Height + 15), New Point(Me.sinterCoolerGeometry.W1L * xRatio, Me.geometryCanvas.Height + 15), Brushes.Black)    'W4L arrow
+        drawDoubleArrow(New Point(Me.sinterCoolerGeometry.W1L * xRatio, Me.geometryCanvas.Height + 15), New Point((Me.sinterCoolerGeometry.W1L + Me.sinterCoolerGeometry.W4R) * xRatio, Me.geometryCanvas.Height + 15), Brushes.Black)    'W4R arrow
     End Sub
 
-    Private Sub drawArrow(ByVal point1 As Point, ByVal point2 As Point)
+    Private Sub drawDoubleArrow(ByVal point1 As Point, ByVal point2 As Point, ByVal stroke As Brush)
         Dim arrow1, arrow2 As New Arrow()
 
         arrow1.X1 = point1.X
@@ -169,7 +180,7 @@
         arrow1.Y2 = point2.Y
         arrow1.HeadWidth = 10
         arrow1.HeadHeight = 4
-        arrow1.Stroke = Brushes.Black
+        arrow1.Stroke = stroke
         arrow1.StrokeThickness = 1
         Me.geometryCanvas.Children.Add(arrow1)
 
@@ -179,7 +190,7 @@
         arrow2.Y2 = point1.Y
         arrow2.HeadWidth = 15
         arrow2.HeadHeight = 5
-        arrow2.Stroke = Brushes.Black
+        arrow2.Stroke = stroke
         arrow2.StrokeThickness = 0.5
         Me.geometryCanvas.Children.Add(arrow2)
     End Sub
