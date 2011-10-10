@@ -225,8 +225,8 @@
         drawDoubleArrow(New Point(-40, Me.V4_Height * yRatio), New Point(-40, (Me.V4_Height + Me.V3_Height) * yRatio), stroke)
         drawDoubleArrow(New Point(-40, (Me.V4_Height + Me.V3_Height) * yRatio), New Point(-40, (Me.V4_Height + Me.V3_Height + Me.V2_Height) * yRatio), stroke)
         drawDoubleArrow(New Point(-40, (Me.V4_Height + Me.V3_Height + Me.V2_Height) * yRatio), New Point(-40, Me.geometryCanvas.Height), stroke)
-        drawDoubleArrow(New Point(0, Me.geometryCanvas.Height + 30), New Point(Me.H1_Width * yRatio, Me.geometryCanvas.Height + 30), stroke)
-        drawDoubleArrow(New Point(Me.H1_Width * yRatio, Me.geometryCanvas.Height + 30), New Point((Me.H1_Width + Me.H2_Width) * xRatio, Me.geometryCanvas.Height + 30), stroke)
+        drawDoubleArrow(New Point(0, Me.geometryCanvas.Height + 30), New Point(Me.H1_Width * xRatio, Me.geometryCanvas.Height + 30), stroke)
+        drawDoubleArrow(New Point(Me.H1_Width * xRatio, Me.geometryCanvas.Height + 30), New Point((Me.H1_Width + Me.H2_Width) * xRatio, Me.geometryCanvas.Height + 30), stroke)
         drawDoubleArrow(New Point((Me.H1_Width + Me.H2_Width) * xRatio, Me.geometryCanvas.Height + 30), New Point(Me.geometryCanvas.Width, Me.geometryCanvas.Height + 30), stroke)
     End Sub
 
