@@ -1,12 +1,12 @@
 ﻿Partial Public Class Grid
 
-    Private V1_Height As Double
-    Private V2_Height As Double
-    Private V3_Height As Double
-    Private V4_Height As Double
-    Private H1_Width As Double
-    Private H2_Width As Double
-    Private H3_Width As Double
+    Private Zx1 As Double
+    Private Zx2 As Double
+    Private Zx3 As Double
+    Private Zx4 As Double
+    Private Z1x As Double
+    Private Z2x As Double
+    Private Z3x As Double
 
     Private V1_Grid As Integer
     Private V2_Grid As Integer
@@ -17,11 +17,14 @@
     Private H3_Grid As Integer
 
     Private sinterCoolerGeometry
+    Private defaultDataList As List(Of Double)
 
-    Public Sub New()
+    Public Sub New(ByVal list As List(Of Double))
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
+
+        defaultDataList = list
         InitDefaultGeometry()
         ' Add any initialization after the InitializeComponent() call.
 
@@ -38,29 +41,29 @@
 
     ' Default Grid
     Private Sub InitDefaultGeometry()
-        Me.V1_Height = 1.0
-        Me.V2_Height = 1.0
-        Me.V3_Height = 3.0
-        Me.V4_Height = 1.0
-        Me.H1_Width = 1.0
-        Me.H2_Width = 4.0
-        Me.H3_Width = 1.0
-        Me.V1_Grid = 4
-        Me.V2_Grid = 5
-        Me.V3_Grid = 7
-        Me.V4_Grid = 5
-        Me.H1_Grid = 6
-        Me.H2_Grid = 12
-        Me.H3_Grid = 4
+        Me.Zx1 = defaultDataList(0)
+        Me.Zx2 = defaultDataList(1)
+        Me.Zx3 = defaultDataList(2)
+        Me.Zx4 = defaultDataList(3)
+        Me.Z1x = defaultDataList(4)
+        Me.Z2x = defaultDataList(5)
+        Me.Z3x = defaultDataList(6)
+        Me.V1_Grid = defaultDataList(7)
+        Me.V2_Grid = defaultDataList(8)
+        Me.V3_Grid = defaultDataList(9)
+        Me.V4_Grid = defaultDataList(10)
+        Me.H1_Grid = defaultDataList(11)
+        Me.H2_Grid = defaultDataList(12)
+        Me.H3_Grid = defaultDataList(13)
 
         'Reset values for textboxes
-        Me.T_V1_Height.Text = Me.V1_Height.ToString()
-        Me.T_V2_Height.Text = Me.V2_Height.ToString()
-        Me.T_V3_Height.Text = Me.V3_Height.ToString()
-        Me.T_V4_Height.Text = Me.V4_Height.ToString()
-        Me.T_H1_Width.Text = Me.H1_Width.ToString()
-        Me.T_H2_Width.Text = Me.H2_Width.ToString()
-        Me.T_H3_Width.Text = Me.H3_Width.ToString()
+        Me.T_Zx1.Text = Me.Zx1.ToString()
+        Me.T_Zx2.Text = Me.Zx2.ToString()
+        Me.T_Zx3.Text = Me.Zx3.ToString()
+        Me.T_Zx4.Text = Me.Zx4.ToString()
+        Me.T_Z1x.Text = Me.Z1x.ToString()
+        Me.T_Z2x.Text = Me.Z2x.ToString()
+        Me.T_Z3x.Text = Me.Z3x.ToString()
         Me.T_V1_Grid.Text = Me.V1_Grid.ToString()
         Me.T_V2_Grid.Text = Me.V2_Grid.ToString()
         Me.T_V3_Grid.Text = Me.V3_Grid.ToString()
@@ -76,8 +79,8 @@
         Me.sinterCoolerGemometry.Stroke = Brushes.Blue
         Me.geometryCanvas.Children.Add(Me.sinterCoolerGeometry)
 
-        Dim xRatio As Double = Me.geometryCanvas.Width / (Me.H1_Width + Me.H2_Width + Me.H3_Width)
-        Dim yRatio As Double = Me.geometryCanvas.Height / (Me.V1_Height + Me.V2_Height + Me.V3_Height + Me.V4_Height)
+        Dim xRatio As Double = Me.geometryCanvas.Width / (Me.Z1x + Me.Z2x + Me.Z3x)
+        Dim yRatio As Double = Me.geometryCanvas.Height / (Me.Zx1 + Me.Zx2 + Me.Zx3 + Me.Zx4)
         DrawArrowLinesNumbers(xRatio, yRatio)
         DrawDistanceMarkers(xRatio, yRatio)
         DrawDistanceArrows(xRatio, yRatio)
@@ -111,33 +114,33 @@
         arrows(0).Y1 = 0
         arrows(0).X2 = 0
         arrows(0).Y2 = arrows(0).Y1
-        textBlocks(0).Text = (Me.V1_Height + Me.V2_Height + Me.V3_Height + Me.V4_Height).ToString() + " m"
+        textBlocks(0).Text = (Me.Zx1 + Me.Zx2 + Me.Zx3 + Me.Zx4).ToString() + " m"
         Canvas.SetLeft(textBlocks(0), -80)
         Canvas.SetTop(textBlocks(0), 0 - 2 * fontSize / 3)
 
         arrows(1).X1 = -50
-        arrows(1).Y1 = Me.V4_Height * yRatio
+        arrows(1).Y1 = Me.Zx4 * yRatio
         arrows(1).X2 = 0
         arrows(1).Y2 = arrows(1).Y1
-        textBlocks(1).Text = (Me.V1_Height + Me.V2_Height + Me.V3_Height).ToString() + " m"
+        textBlocks(1).Text = (Me.Zx1 + Me.Zx2 + Me.Zx3).ToString() + " m"
         Canvas.SetLeft(textBlocks(1), -80)
-        Canvas.SetTop(textBlocks(1), Me.V4_Height * yRatio - 2 * fontSize / 3)
+        Canvas.SetTop(textBlocks(1), Me.Zx4 * yRatio - 2 * fontSize / 3)
 
         arrows(2).X1 = -50
-        arrows(2).Y1 = (Me.V4_Height + Me.V3_Height) * yRatio
+        arrows(2).Y1 = (Me.Zx4 + Me.Zx3) * yRatio
         arrows(2).X2 = 0
         arrows(2).Y2 = arrows(2).Y1
-        textBlocks(2).Text = (Me.V1_Height + Me.V2_Height).ToString() + " m"
+        textBlocks(2).Text = (Me.Zx1 + Me.Zx2).ToString() + " m"
         Canvas.SetLeft(textBlocks(2), -80)
-        Canvas.SetTop(textBlocks(2), (Me.V3_Height + Me.V4_Height) * yRatio - 2 * fontSize / 3)
+        Canvas.SetTop(textBlocks(2), (Me.Zx3 + Me.Zx4) * yRatio - 2 * fontSize / 3)
 
         arrows(3).X1 = -50
-        arrows(3).Y1 = (Me.V4_Height + Me.V3_Height + Me.V2_Height) * yRatio
+        arrows(3).Y1 = (Me.Zx4 + Me.Zx3 + Me.Zx2) * yRatio
         arrows(3).X2 = 0
         arrows(3).Y2 = arrows(3).Y1
-        textBlocks(3).Text = Me.V1_Height.ToString() + " m"
+        textBlocks(3).Text = Me.Zx1.ToString() + " m"
         Canvas.SetLeft(textBlocks(3), -80)
-        Canvas.SetTop(textBlocks(3), (Me.V2_Height + Me.V3_Height + Me.V4_Height) * yRatio - 2 * fontSize / 3)
+        Canvas.SetTop(textBlocks(3), (Me.Zx2 + Me.Zx3 + Me.Zx4) * yRatio - 2 * fontSize / 3)
 
         arrows(4).X1 = -50
         arrows(4).Y1 = Me.geometryCanvas.Height
@@ -155,27 +158,27 @@
         Canvas.SetLeft(textBlocks(5), 0)
         Canvas.SetTop(textBlocks(5), Me.geometryCanvas.Height + 50 + fontSize)
 
-        arrows(6).X1 = Me.H1_Width * xRatio
+        arrows(6).X1 = Me.Z1x * xRatio
         arrows(6).Y1 = Me.geometryCanvas.Height + 50
         arrows(6).X2 = arrows(6).X1
         arrows(6).Y2 = Me.geometryCanvas.Height
-        textBlocks(6).Text = Me.H1_Width.ToString + "m"
-        Canvas.SetLeft(textBlocks(6), Me.H1_Width * yRatio)
+        textBlocks(6).Text = Me.Z1x.ToString + "m"
+        Canvas.SetLeft(textBlocks(6), Me.Z1x * yRatio)
         Canvas.SetTop(textBlocks(6), Me.geometryCanvas.Height + 50 + fontSize)
 
-        arrows(7).X1 = (Me.H1_Width + Me.H2_Width) * xRatio
+        arrows(7).X1 = (Me.Z1x + Me.Z2x) * xRatio
         arrows(7).Y1 = Me.geometryCanvas.Height + 50
         arrows(7).X2 = arrows(7).X1
         arrows(7).Y2 = Me.geometryCanvas.Height
-        textBlocks(7).Text = (Me.H1_Width + Me.H2_Width).ToString() + "m"
-        Canvas.SetLeft(textBlocks(7), (Me.H1_Width + Me.H2_Width) * yRatio)
+        textBlocks(7).Text = (Me.Z1x + Me.Z2x).ToString() + "m"
+        Canvas.SetLeft(textBlocks(7), (Me.Z1x + Me.Z2x) * yRatio)
         Canvas.SetTop(textBlocks(7), Me.geometryCanvas.Height + 50 + fontSize)
 
         arrows(8).X1 = Me.geometryCanvas.Width
         arrows(8).Y1 = Me.geometryCanvas.Height + 50
         arrows(8).X2 = arrows(8).X1
         arrows(8).Y2 = Me.geometryCanvas.Height
-        textBlocks(8).Text = (Me.H1_Width + Me.H2_Width + Me.H3_Width).ToString() + "m"
+        textBlocks(8).Text = (Me.Z1x + Me.Z2x + Me.Z3x).ToString() + "m"
         Canvas.SetLeft(textBlocks(8), Me.geometryCanvas.Width)
         Canvas.SetTop(textBlocks(8), Me.geometryCanvas.Height + 50 + fontSize)
 
@@ -191,43 +194,43 @@
 
         textBlocks(0).Text = "V4"
         Canvas.SetLeft(textBlocks(0), -70)
-        Canvas.SetTop(textBlocks(0), Me.V4_Height * yRatio / 2)
+        Canvas.SetTop(textBlocks(0), Me.Zx4 * yRatio / 2)
 
         textBlocks(1).Text = "V3"
         Canvas.SetLeft(textBlocks(1), -70)
-        Canvas.SetTop(textBlocks(1), (Me.V4_Height + Me.V3_Height / 2) * yRatio)
+        Canvas.SetTop(textBlocks(1), (Me.Zx4 + Me.Zx3 / 2) * yRatio)
 
         textBlocks(2).Text = "V2"
         Canvas.SetLeft(textBlocks(2), -70)
-        Canvas.SetTop(textBlocks(2), (Me.V4_Height + Me.V3_Height + Me.V2_Height / 2) * yRatio)
+        Canvas.SetTop(textBlocks(2), (Me.Zx4 + Me.Zx3 + Me.Zx2 / 2) * yRatio)
 
         textBlocks(3).Text = "V1"
         Canvas.SetLeft(textBlocks(3), -70)
-        Canvas.SetTop(textBlocks(3), Me.geometryCanvas.Height - Me.V1_Height * yRatio / 2)
+        Canvas.SetTop(textBlocks(3), Me.geometryCanvas.Height - Me.Zx1 * yRatio / 2)
 
         textBlocks(4).Text = "H1"
-        Canvas.SetLeft(textBlocks(4), Me.H1_Width * xRatio / 2)
+        Canvas.SetLeft(textBlocks(4), Me.Z1x * xRatio / 2)
         Canvas.SetTop(textBlocks(4), Me.geometryCanvas.Height + 40)
 
         textBlocks(5).Text = "H2"
-        Canvas.SetLeft(textBlocks(5), (Me.H1_Width + Me.H2_Width / 2) * xRatio)
+        Canvas.SetLeft(textBlocks(5), (Me.Z1x + Me.Z2x / 2) * xRatio)
         Canvas.SetTop(textBlocks(5), Me.geometryCanvas.Height + 40)
 
         textBlocks(6).Text = "H3"
-        Canvas.SetLeft(textBlocks(6), (Me.H1_Width + Me.H2_Width + Me.H3_Width / 2) * xRatio)
+        Canvas.SetLeft(textBlocks(6), (Me.Z1x + Me.Z2x + Me.Z3x / 2) * xRatio)
         Canvas.SetTop(textBlocks(6), Me.geometryCanvas.Height + 40)
 
     End Sub
 
     Private Sub DrawDistanceArrows(ByVal xRatio As Double, ByVal yRatio As Double)
         Dim stroke As Brush = Brushes.Red
-        drawDoubleArrow(New Point(-40, 0), New Point(-40, Me.V4_Height * yRatio), stroke)
-        drawDoubleArrow(New Point(-40, Me.V4_Height * yRatio), New Point(-40, (Me.V4_Height + Me.V3_Height) * yRatio), stroke)
-        drawDoubleArrow(New Point(-40, (Me.V4_Height + Me.V3_Height) * yRatio), New Point(-40, (Me.V4_Height + Me.V3_Height + Me.V2_Height) * yRatio), stroke)
-        drawDoubleArrow(New Point(-40, (Me.V4_Height + Me.V3_Height + Me.V2_Height) * yRatio), New Point(-40, Me.geometryCanvas.Height), stroke)
-        drawDoubleArrow(New Point(0, Me.geometryCanvas.Height + 30), New Point(Me.H1_Width * xRatio, Me.geometryCanvas.Height + 30), stroke)
-        drawDoubleArrow(New Point(Me.H1_Width * xRatio, Me.geometryCanvas.Height + 30), New Point((Me.H1_Width + Me.H2_Width) * xRatio, Me.geometryCanvas.Height + 30), stroke)
-        drawDoubleArrow(New Point((Me.H1_Width + Me.H2_Width) * xRatio, Me.geometryCanvas.Height + 30), New Point(Me.geometryCanvas.Width, Me.geometryCanvas.Height + 30), stroke)
+        drawDoubleArrow(New Point(-40, 0), New Point(-40, Me.Zx4 * yRatio), stroke)
+        drawDoubleArrow(New Point(-40, Me.Zx4 * yRatio), New Point(-40, (Me.Zx4 + Me.Zx3) * yRatio), stroke)
+        drawDoubleArrow(New Point(-40, (Me.Zx4 + Me.Zx3) * yRatio), New Point(-40, (Me.Zx4 + Me.Zx3 + Me.Zx2) * yRatio), stroke)
+        drawDoubleArrow(New Point(-40, (Me.Zx4 + Me.Zx3 + Me.Zx2) * yRatio), New Point(-40, Me.geometryCanvas.Height), stroke)
+        drawDoubleArrow(New Point(0, Me.geometryCanvas.Height + 30), New Point(Me.Z1x * xRatio, Me.geometryCanvas.Height + 30), stroke)
+        drawDoubleArrow(New Point(Me.Z1x * xRatio, Me.geometryCanvas.Height + 30), New Point((Me.Z1x + Me.Z2x) * xRatio, Me.geometryCanvas.Height + 30), stroke)
+        drawDoubleArrow(New Point((Me.Z1x + Me.Z2x) * xRatio, Me.geometryCanvas.Height + 30), New Point(Me.geometryCanvas.Width, Me.geometryCanvas.Height + 30), stroke)
     End Sub
 
     Private Sub drawDoubleArrow(ByVal point1 As Point, ByVal point2 As Point, ByVal stroke As Brush)
@@ -277,7 +280,7 @@
             myLine.StrokeThickness = 1
             Me.geometryCanvas.Children.Add(myLine)
 
-            startY += Me.V4_Height * yRatio / grid
+            startY += Me.Zx4 * yRatio / grid
         Next
 
         'V3
@@ -294,7 +297,7 @@
             myLine.StrokeThickness = 1
             Me.geometryCanvas.Children.Add(myLine)
 
-            startY += Me.V3_Height * yRatio / grid
+            startY += Me.Zx3 * yRatio / grid
         Next
 
         'V2
@@ -311,7 +314,7 @@
             myLine.StrokeThickness = 1
             Me.geometryCanvas.Children.Add(myLine)
 
-            startY += Me.V2_Height * yRatio / grid
+            startY += Me.Zx2 * yRatio / grid
         Next
 
         'V1
@@ -328,7 +331,7 @@
             myLine.StrokeThickness = 1
             Me.geometryCanvas.Children.Add(myLine)
 
-            startY += Me.V1_Height * yRatio / grid
+            startY += Me.Zx1 * yRatio / grid
         Next
     End Sub
 
@@ -350,7 +353,7 @@
             myLine.StrokeThickness = 1
             Me.geometryCanvas.Children.Add(myLine)
 
-            startX += Me.H1_Width * xRatio / grid
+            startX += Me.Z1x * xRatio / grid
         Next
 
         'H2
@@ -367,7 +370,7 @@
             myLine.StrokeThickness = 1
             Me.geometryCanvas.Children.Add(myLine)
 
-            startX += Me.H2_Width * xRatio / grid
+            startX += Me.Z2x * xRatio / grid
         Next
 
         'H3
@@ -384,7 +387,7 @@
             myLine.StrokeThickness = 1
             Me.geometryCanvas.Children.Add(myLine)
 
-            startX += Me.H3_Width * xRatio / grid
+            startX += Me.Z3x * xRatio / grid
         Next
 
     End Sub
@@ -394,17 +397,17 @@
         Dim value As Double = CDbl(tempTextBox.Text)
         Dim boxName As String = tempTextBox.Name
         Select Case boxName
-            Case "T_V1_Height"
-                Me.V1_Height = value
+            Case "T_Zx1"
+                Me.Zx1 = value
                 Exit Select
-            Case "T_V2_Height"
-                Me.V2_Height = value
+            Case "T_Zx2"
+                Me.Zx2 = value
                 Exit Select
-            Case "T_V3_Height"
-                Me.V3_Height = value
+            Case "T_Zx3"
+                Me.Zx3 = value
                 Exit Select
-            Case "T_V4_Height"
-                Me.V4_Height = value
+            Case "T_Zx4"
+                Me.Zx4 = value
                 Exit Select
             Case "T_V1_Grid"
                 Me.V1_Grid = CInt(value)
@@ -418,14 +421,14 @@
             Case "T_V4_Grid"
                 Me.V4_Grid = CInt(value)
                 Exit Select
-            Case "T_H1_Width"
-                Me.H1_Width = value
+            Case "T_Z1x"
+                Me.Z1x = value
                 Exit Select
-            Case "T_H2_Width"
-                Me.H2_Width = value
+            Case "T_Z2x"
+                Me.Z2x = value
                 Exit Select
-            Case "T_H3_Width"
-                Me.H3_Width = value
+            Case "T_Z3x"
+                Me.Z3x = value
                 Exit Select
             Case "T_H1_Grid"
                 Me.H1_Grid = CInt(value)

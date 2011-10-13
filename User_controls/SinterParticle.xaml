@@ -2,11 +2,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="900" Height="576">
     <Grid>
-        <RadioButton Height="16" HorizontalAlignment="Left" Margin="58,54,0,0" Name="RadioButton1" VerticalAlignment="Top" Width="180">Random size distribution</RadioButton>
-        <RadioButton Height="16" HorizontalAlignment="Left" Margin="58,89,0,0" Name="RadioButton2" VerticalAlignment="Top" Width="330">Specify size distribution zone</RadioButton>
-        <Canvas Background="LightCyan" Margin="58,127,434,48" Name="geometryCanvas" />
+        <RadioButton Height="16" HorizontalAlignment="Left" Margin="93,35,0,0" Name="RadioButton1" VerticalAlignment="Top" Width="180">Random size distribution</RadioButton>
+        <RadioButton Height="16" Margin="254,35,316,0" Name="RadioButton2" VerticalAlignment="Top">Specify size distribution zone</RadioButton>
+        <Canvas Background="LightCyan" Margin="97,64,403,112" Name="geometryCanvas" MouseLeftButtonDown="geometryCanvas_MouseLeftButtonDown">
+        
+        </Canvas>
 
-        <Grid Name="VerticalGrid" Width="260" HorizontalAlignment="Right" Margin="0,127,92,134">
+        <Grid Name="VerticalGrid" Width="260" HorizontalAlignment="Right" Margin="0,80,92,181">
             <Grid.RowDefinitions>
                 <RowDefinition Height="35" />
                 <RowDefinition Height="35" />
@@ -35,15 +37,15 @@
             <Label Grid.Row="8" Grid.Column="0" Content="Z5x" />
             
             <!--Column Textbox-->
-            <TextBox Grid.Row="0" Grid.Column="1" />
-            <TextBox Grid.Row="1" Grid.Column="1" />
-            <TextBox Grid.Row="2" Grid.Column="1" />
-            <TextBox Grid.Row="3" Grid.Column="1" />
-            <TextBox Grid.Row="4" Grid.Column="1" />
-            <TextBox Grid.Row="5" Grid.Column="1" />
-            <TextBox Grid.Row="6" Grid.Column="1" />
-            <TextBox Grid.Row="7" Grid.Column="1" />
-            <TextBox Grid.Row="8" Grid.Column="1" />
+            <TextBox Grid.Row="0" Grid.Column="1" Name="T_Zx1"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="T_Zx2"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="T_Zx3"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="T_Zx4"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Name="T_Z1x"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Name="T_Z2x"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Name="T_Z3x"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Name="T_Z4x"/>
+            <TextBox Grid.Row="8" Grid.Column="1" Name="T_Z5x"/>
             
             <!--Column Labels-->
             <Label Grid.Row="0" Grid.Column="2" Content="m" />
@@ -57,8 +59,8 @@
             <Label Grid.Row="8" Grid.Column="2" Content="m" />
             
         </Grid>
-        <Button Height="32" HorizontalAlignment="Right" Margin="0,0,245,48" Name="Button1" VerticalAlignment="Bottom" Width="91">Default</Button>
-        <Button Height="32" HorizontalAlignment="Right" Margin="0,0,119,48" Name="Button2" VerticalAlignment="Bottom" Width="91">Proceed</Button>
+        <Button Height="32" HorizontalAlignment="Right" Margin="0,0,247,112" Name="Button1" VerticalAlignment="Bottom" Width="91">Default</Button>
+        <Button Height="32" HorizontalAlignment="Right" Margin="0,0,116,112" Name="Button2" VerticalAlignment="Bottom" Width="91">Proceed</Button>
     </Grid>
     
 </UserControl>

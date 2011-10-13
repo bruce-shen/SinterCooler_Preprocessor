@@ -1,12 +1,14 @@
 ﻿Partial Public Class Geometry
 
     Private sinterCoolerGeometry As New SinterCoolerGeometry()
+    Private defaultDataList As List(Of Double)
 
     'This is the new Line
-    Public Sub New()
+    Public Sub New(ByVal List As List(Of Double))
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
+        defaultDataList = List
         InitDefaultGeometry()
         drawGeometry()
         ' Add any initialization after the InitializeComponent() call.
@@ -26,18 +28,18 @@
     ' Default Geometry
     Private Sub InitDefaultGeometry()
 
-        Me.sinterCoolerGeometry.W1L = 100
-        Me.sinterCoolerGeometry.W1R = 100
-        Me.sinterCoolerGeometry.W2L = 85
-        Me.sinterCoolerGeometry.W2R = 85
-        Me.sinterCoolerGeometry.W3L = 50
-        Me.sinterCoolerGeometry.W3R = 50
-        Me.sinterCoolerGeometry.W4L = 30
-        Me.sinterCoolerGeometry.W4R = 30
-        Me.sinterCoolerGeometry.H1 = 100
-        Me.sinterCoolerGeometry.H2 = 30
-        Me.sinterCoolerGeometry.H3 = 30
-        
+        Me.sinterCoolerGeometry.W1L = defaultDataList(0)
+        Me.sinterCoolerGeometry.W1R = defaultDataList(1)
+        Me.sinterCoolerGeometry.W2L = defaultDataList(2)
+        Me.sinterCoolerGeometry.W2R = defaultDataList(3)
+        Me.sinterCoolerGeometry.W3L = defaultDataList(4)
+        Me.sinterCoolerGeometry.W3R = defaultDataList(5)
+        Me.sinterCoolerGeometry.W4L = defaultDataList(6)
+        Me.sinterCoolerGeometry.W4R = defaultDataList(7)
+        Me.sinterCoolerGeometry.H1 = defaultDataList(8)
+        Me.sinterCoolerGeometry.H2 = defaultDataList(9)
+        Me.sinterCoolerGeometry.H3 = defaultDataList(10)
+
 
         'Reset values for textboxes
         Me.T_W1L.Text = Me.sinterCoolerGeometry.W1L.ToString

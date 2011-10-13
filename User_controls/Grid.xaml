@@ -35,16 +35,16 @@
 
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0,1,1,1" />
             <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
-                <TextBox Grid.Column="1" Grid.Row="1" Name="T_V1_Height" KeyDown ="TextBox_KeyDown" />
+                <TextBox Grid.Column="1" Grid.Row="1" Name="T_Zx1" KeyDown ="TextBox_KeyDown" />
             </Border>
             <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
-                <TextBox Grid.Column="1" Grid.Row="2" Name="T_V2_Height" KeyDown ="TextBox_KeyDown" />
+                <TextBox Grid.Column="1" Grid.Row="2" Name="T_Zx2" KeyDown ="TextBox_KeyDown" />
             </Border>
             <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
-                <TextBox Grid.Column="1" Grid.Row="3" Name="T_V3_Height" KeyDown ="TextBox_KeyDown" />
+                <TextBox Grid.Column="1" Grid.Row="3" Name="T_Zx3" KeyDown ="TextBox_KeyDown" />
             </Border>
             <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
-                <TextBox Grid.Column="1" Grid.Row="4" Name="T_V4_Height" KeyDown ="TextBox_KeyDown" />
+                <TextBox Grid.Column="1" Grid.Row="4" Name="T_Zx4" KeyDown ="TextBox_KeyDown" />
             </Border>
 
             <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0,1,1,1" >
@@ -109,13 +109,13 @@
 
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0,1,1,1" />
             <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
-                <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Name="T_H1_Width" KeyDown ="TextBox_KeyDown" />
+                <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Name="T_Z1x" KeyDown ="TextBox_KeyDown" />
             </Border>
             <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
-                <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Name="T_H2_Width" KeyDown ="TextBox_KeyDown" />
+                <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Name="T_Z2x" KeyDown ="TextBox_KeyDown" />
             </Border>
             <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,1,1" >
-                <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Name="T_H3_Width" KeyDown ="TextBox_KeyDown" />
+                <TextBox Grid.Column="1" Grid.Row="3" Margin="3" Name="T_Z3x" KeyDown ="TextBox_KeyDown" />
             </Border>
 
             <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0,1,1,1" >
