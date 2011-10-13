@@ -16,16 +16,20 @@
 
 
     Sub New()
+
         InitializeComponent()
-        InitializeUserControls()    'init all page windows
+        'InitializeUserControls()    'init all page windows
         InitializeBackground()      'init arcelormittal background
+
+
     End Sub
 
     Private Sub InitializeUserControls()
-        geometryWindow = New Geometry
-        gridWindow = New Grid
-        sinterPropertiesWindow = New SinterProperties
-        sinterParticleWindow = New SinterParticle
+        Dim fileIni As New FileIni("setup.ini")
+        geometryWindow = New Geometry(fileIni.GetPropertities()(0))
+        gridWindow = New Grid(fileIni.GetPropertities()(1))
+        sinterPropertiesWindow = New SinterProperties(fileIni.GetPropertities()(2))
+        sinterParticleWindow = New SinterParticle(fileIni.GetPropertities()(3))
         sinterTemperatureWindow = New SinterTemperature
         coolingAirBlowerWindow = New CoolingAirBlower
         probeLocationWindow = New ProbeLocation
@@ -49,10 +53,43 @@
         Me.probeLocationWindow.geometryCanvas.Children.Clear()
     End Sub
 
+    'Enalbe windows when new or load a file
+    Private Sub EnableWindows()
+        'File 
+        Me.File.IsEnabled = True
+        Me.newFile.IsEnabled = True
+        Me.openFile.IsEnabled = True
+        Me.saveFile.IsEnabled = True
+        Me.saveAs.IsEnabled = True
+
+        'Sinter Cooler
+        Me.sinterCooler.IsEnabled = True
+        Me.geometry.IsEnabled = True
+        Me.grid.IsEnabled = True
+
+        'Sinter
+        Me.sinter.IsEnabled = True
+        Me.sinterProperties.IsEnabled = True
+        Me.sinterParticle.IsEnabled = True
+        Me.sinterTemperature.IsEnabled = True
+
+        'Cooling Air and Blower
+        Me.coolingAirBlower.IsEnabled = True
+
+        'Formats of Results
+        Me.formatResult.IsEnabled = True
+        Me.probeLocation.IsEnabled = True
+        Me.outForProbes.IsEnabled = True
+        Me.outForContours.IsEnabled = True
+        Me.computation.IsEnabled = True
+    End Sub
+
     Private Sub Menu_Click(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs)
         Dim mnu As MenuItem = DirectCast(e.OriginalSource, MenuItem)
         Select Case mnu.Name
             Case "newFile"
+                InitializeUserControls()
+                EnableWindows()
                 contentController.Content = geometryWindow
                 Exit Select
             Case "exit"
@@ -78,6 +115,9 @@
                 contentController.Content = Me.sinterPropertiesWindow
                 Exit Select
             Case "sinterParticle"
+                Me.sinterParticleWindow.sinterCoolerGemometry = Me.geometryWindow.sinterCoolerGemometry
+                ClearCanvas()
+                Me.sinterParticleWindow.DrawGeometry()
                 contentController.Content = Me.sinterParticleWindow
                 Exit Select
             Case "sinterTemperature"

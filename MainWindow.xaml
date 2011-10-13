@@ -5,35 +5,35 @@
     Title="Sinter Cooler Simulation Pre-processor" Height="600" Width="900" MinHeight="600" MinWidth="900" MaxHeight="600" MaxWidth="900" xmlns:my="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
     <Grid>
         <Menu IsMainMenu="True" Name="menu" Height="22" VerticalAlignment="Top" MenuItem.Click="Menu_Click">
-            <MenuItem  Header="_File" Name="MenuItem1">
+            <MenuItem  Header="_File" Name="File">
                 <MenuItem Header="_New..."  Name="newFile"/>
                 <MenuItem Header="_Open..." Name="openFile"/>
-                <MenuItem Header="_Save" Name="saveFile"/>
-                <MenuItem Header="_Save As..." Name="saveAs"/>
+                <MenuItem Header="_Save" Name="saveFile" IsEnabled="False"/>
+                <MenuItem Header="_Save As..." Name="saveAs" IsEnabled="False"/>
                 <MenuItem Header="_Exit" Name="exit"/>
             </MenuItem>
-            <MenuItem Header="Sinter Cooler" Name="sinterCooler">
-                <MenuItem Header="Geometry" Name="geometry"/>
-                <MenuItem Header="Grids" Name="grid"/>
+            <MenuItem Header="Sinter Cooler" Name="sinterCooler" IsEnabled="False">
+                <MenuItem Header="Geometry" Name="geometry" IsEnabled="False"/>
+                <MenuItem Header="Grids" Name="grid" IsEnabled="False"/>
             </MenuItem>
-            <MenuItem Header="Sinter" Name="sinter">
-                <MenuItem Header="Sinter properties" Name="sinterProperties"/>
-                <MenuItem Header="Sinter particle size distribution across the section" Name="sinterParticle"/>
-                <MenuItem Header="Sinter temperature and distribution" Name="sinterTemperature"/>
+            <MenuItem Header="Sinter" Name="sinter" IsEnabled="False">
+                <MenuItem Header="Sinter properties" Name="sinterProperties" IsEnabled="False"/>
+                <MenuItem Header="Sinter particle size distribution across the section" Name="sinterParticle" IsEnabled="False"/>
+                <MenuItem Header="Sinter temperature and distribution" Name="sinterTemperature" IsEnabled="False"/>
             </MenuItem>
-            <MenuItem Header="Cooling Air and Blower" Name="coolingAirBlower">
-            </MenuItem>
-            
-            <MenuItem Header="Format Result" Name="formatResult">
-                <MenuItem Header="Probe location" Name="probeLocation"/>
-                <MenuItem Header="Output items for probes" Name="outForProbes"/>
-                <MenuItem Header="Output items for contours" Name="outForContours"/>
+            <MenuItem Header="Cooling Air and Blower" Name="coolingAirBlower" IsEnabled="False">
             </MenuItem>
             
-            <MenuItem Header="Computation" Name="computation">
-                <MenuItem Header="Solver Setup" Name="solverSetup"/>
-                <MenuItem Header="Run" Name="run"/>
-                <MenuItem Header="Results" Name="results"/>
+            <MenuItem Header="Format Result" Name="formatResult" IsEnabled="False">
+                <MenuItem Header="Probe location" Name="probeLocation" IsEnabled="False"/>
+                <MenuItem Header="Output items for probes" Name="outForProbes" IsEnabled="False"/>
+                <MenuItem Header="Output items for contours" Name="outForContours" IsEnabled="False"/>
+            </MenuItem>
+            
+            <MenuItem Header="Computation" Name="computation" IsEnabled="False">
+                <MenuItem Header="Solver Setup" Name="solverSetup" IsEnabled="False"/>
+                <MenuItem Header="Run" Name="run" IsEnabled="False"/>
+                <MenuItem Header="Results" Name="results" IsEnabled="False"/>
             </MenuItem>
 
             <MenuItem Header="Help/About" Name="about">
