@@ -114,6 +114,16 @@
 
     End Sub
 
+    Public Function GetSizeOptions() As List(Of Double)
+        Dim list As List(Of Double) = New List(Of Double)
+        list.Add(Me.sizePercents(0, 0))
+        list.Add(Me.sizePercents(0, 1))
+        list.Add(Me.sizePercents(0, 2))
+        list.Add(Me.sizePercents(0, 3))
+        list.Add(Me.sizePercents(0, 4))
+        Return list
+    End Function
+
     Private Sub UpdateRadioArea()
         Dim index_HeatCapacity As Integer
         Dim index_ThermalConductivity As Integer

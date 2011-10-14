@@ -30,7 +30,7 @@
         gridWindow = New Grid(fileIni.GetPropertities()(1))
         sinterPropertiesWindow = New SinterProperties(fileIni.GetPropertities()(2))
         sinterParticleWindow = New SinterParticle(fileIni.GetPropertities()(3))
-        sinterTemperatureWindow = New SinterTemperature
+        sinterTemperatureWindow = New SinterTemperature(fileIni.GetPropertities()(4))
         coolingAirBlowerWindow = New CoolingAirBlower
         probeLocationWindow = New ProbeLocation
         outForProbesWindow = New OutputforProbes
@@ -116,6 +116,7 @@
                 Exit Select
             Case "sinterParticle"
                 Me.sinterParticleWindow.sinterCoolerGemometry = Me.geometryWindow.sinterCoolerGemometry
+                Me.sinterParticleWindow.SetSizeOptions(Me.sinterPropertiesWindow.GetSizeOptions())
                 ClearCanvas()
                 Me.sinterParticleWindow.DrawGeometry()
                 contentController.Content = Me.sinterParticleWindow

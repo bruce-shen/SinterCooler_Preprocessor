@@ -1,0 +1,13 @@
+﻿<Window x:Class="SinterParticleSelectionForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="SinterParticleSelectionDialog" Height="343" Width="227">
+    <Grid>
+        <RadioButton Height="16" Margin="36,39,58,0" Name="ParticleSize_1" VerticalAlignment="Top" Click="ParticleSize_Click"/>
+        <RadioButton Height="16" Margin="36,82,58,0" Name="ParticleSize_2" VerticalAlignment="Top" Click="ParticleSize_Click"/>
+        <RadioButton Height="16" Margin="36,128,58,0" Name="ParticleSize_3" VerticalAlignment="Top" Click="ParticleSize_Click"/>
+        <RadioButton Margin="36,0,58,117" Name="ParticleSize_4" VerticalAlignment="Bottom" Height="17" Click="ParticleSize_Click"/>
+        <RadioButton Height="16" Margin="36,0,58,75" Name="ParticleSize_5" VerticalAlignment="Bottom" Click="ParticleSize_Click"/>
+        
+    </Grid>
+</Window>
